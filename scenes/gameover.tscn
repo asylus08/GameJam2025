@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci207ogm1m1wr"]
+
+[ext_resource type="FontFile" uid="uid://qjry3acvydgu" path="res://assets/Cinzel-VariableFont_wght.ttf" id="1_328nm"]
+[ext_resource type="Script" path="res://scripts/Gameover.cs" id="1_xiarq"]
+[ext_resource type="Texture2D" uid="uid://lw8chis1yip4" path="res://assets/option_image.png" id="3_inlgq"]
+[ext_resource type="Texture2D" uid="uid://bfqefwcmqf347" path="res://assets/hover_option.png" id="4_vsycl"]
+[ext_resource type="Texture2D" uid="uid://bbki5uhe7td4l" path="res://assets/ending.jpg" id="6_7c84v"]
+
+[node name="Gameover" type="Node2D"]
+script = ExtResource("1_xiarq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="returnMenu" type="TextureButton" parent="Control"]
+z_index = 10
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 1471.0
+offset_top = 816.0
+offset_right = 1783.0
+offset_bottom = 976.0
+texture_normal = ExtResource("3_inlgq")
+texture_hover = ExtResource("4_vsycl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/returnMenu"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 225.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_328nm")
+text = "Retour au menu"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 1918.0
+offset_bottom = 1092.0
+mouse_filter = 2
+texture = ExtResource("6_7c84v")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 648.0
+offset_top = 288.0
+offset_right = 1253.0
+offset_bottom = 437.0
+theme_override_colors/font_color = Color(0.965852, 0.0805875, 0.05127, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_328nm")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[connection signal="pressed" from="Control/returnMenu" to="." method="_on_return_menu_pressed"]

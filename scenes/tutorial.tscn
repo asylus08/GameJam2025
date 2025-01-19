@@ -1,0 +1,502 @@
+[gd_scene load_steps=27 format=3 uid="uid://df2jhjavknreq"]
+
+[ext_resource type="FontFile" uid="uid://f8sheos5884n" path="res://assets/BadScript-Regular.ttf" id="3_3bj3n"]
+[ext_resource type="Texture2D" uid="uid://chm0cqbugix0r" path="res://assets/bulle.png" id="6_5i0m0"]
+[ext_resource type="Texture2D" uid="uid://ilra4s6aaf7u" path="res://assets/bulle_click.png" id="7_jdefl"]
+[ext_resource type="Texture2D" uid="uid://c4m0p1qf5atrf" path="res://assets/bulle_hover.png" id="8_s4n3d"]
+[ext_resource type="Texture2D" uid="uid://b8ylmn6sxsun6" path="res://assets/bulle_disabled.png" id="9_x8wkf"]
+[ext_resource type="Texture2D" uid="uid://by8kxnvp64os4" path="res://assets/next_level_arrow.png" id="10_e1xts"]
+[ext_resource type="Texture2D" uid="uid://ctrquvayqk2gx" path="res://assets/progress_underlayer.png" id="11_1hult"]
+[ext_resource type="Script" path="res://scripts/Tooltip.cs" id="11_g2rvb"]
+[ext_resource type="FontFile" uid="uid://qjry3acvydgu" path="res://assets/Cinzel-VariableFont_wght.ttf" id="13_07lpm"]
+[ext_resource type="Texture2D" uid="uid://dh456tl1qfifg" path="res://assets/PodiumV2.png" id="14_gd6v7"]
+[ext_resource type="Texture2D" uid="uid://cyivycdqno05a" path="res://assets/Army.png" id="14_qoy6p"]
+[ext_resource type="Texture2D" uid="uid://baym1351ca7ub" path="res://assets/Commoner.png" id="15_xqykm"]
+[ext_resource type="Texture2D" uid="uid://dc8xy6gyj6d1v" path="res://assets/Clergy.png" id="16_qj0ix"]
+[ext_resource type="Script" path="res://scripts/GameSentence.cs" id="19_wl3mm"]
+[ext_resource type="Texture2D" uid="uid://blnr0xegcuno7" path="res://assets/clock1.png" id="20_ejlwg"]
+[ext_resource type="Texture2D" uid="uid://lw8chis1yip4" path="res://assets/option_image.png" id="20_pmthu"]
+[ext_resource type="Texture2D" uid="uid://dr4j2kltfhyqu" path="res://assets/clock3.png" id="21_2r3t2"]
+[ext_resource type="Texture2D" uid="uid://bfqefwcmqf347" path="res://assets/hover_option.png" id="21_y6hat"]
+[ext_resource type="Texture2D" uid="uid://644p8dvqo3ef" path="res://assets/clock2.png" id="22_5f2g3"]
+[ext_resource type="Script" path="res://scripts/Tutorial.cs" id="22_bayv6"]
+
+[sub_resource type="Gradient" id="Gradient_pnxv0"]
+colors = PackedColorArray(0, 0, 0, 0.533333, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pxqfi"]
+gradient = SubResource("Gradient_pnxv0")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ppk8"]
+bg_color = Color(0.57525, 0.492051, 0.694352, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0cpa"]
+bg_color = Color(0.814417, 0.510678, 0.41716, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rqgq"]
+bg_color = Color(0.783312, 0.524869, 0.472184, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0k00"]
+bg_color = Color(0.258694, 0.673665, 0.665325, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Tutorial" type="Control" node_paths=PackedStringArray("explanation")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("22_bayv6")
+explanation = [NodePath("Explanation/Label"), NodePath("Explanation/Label2"), NodePath("Explanation/Label3"), NodePath("Explanation/Label4")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1.26343e-07, 0.0619855, 0.21394, 0.862745)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 136.0
+offset_right = 2080.0
+offset_bottom = 2184.0
+texture_under = ExtResource("11_1hult")
+
+[node name="CrowdPositions" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Node2D2" type="Node2D" parent="CrowdPositions"]
+position = Vector2(160, 504)
+
+[node name="Node2D7" type="Node2D" parent="CrowdPositions"]
+position = Vector2(1096, 512)
+
+[node name="Explanation" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Label" type="Label" parent="Explanation"]
+z_index = 300
+y_sort_enabled = true
+offset_left = 64.0
+offset_top = 320.0
+offset_right = 551.0
+offset_bottom = 829.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_07lpm")
+theme_override_font_sizes/font_size = 45
+text = "Il existe 3 classes: les paysans, le clergé et l'armée.
+
+Votre but est de construire un discours qui les satisfait."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Army" type="Sprite2D" parent="Explanation/Label"]
+position = Vector2(385, 575)
+scale = Vector2(0.0634765, 0.0634765)
+texture = ExtResource("14_qoy6p")
+
+[node name="Clergy" type="Sprite2D" parent="Explanation/Label"]
+position = Vector2(256, 576)
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("16_qj0ix")
+
+[node name="Commoner" type="Sprite2D" parent="Explanation/Label"]
+position = Vector2(128, 576)
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("15_xqykm")
+
+[node name="Label2" type="Label" parent="Explanation"]
+visible = false
+z_index = 300
+y_sort_enabled = true
+offset_left = 772.0
+offset_top = 66.0
+offset_right = 1488.0
+offset_bottom = 383.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_07lpm")
+theme_override_font_sizes/font_size = 45
+text = "Votre réputation auprès des classes est indiquée ici.
+
+Votre réputation globale y est aussi indiquée"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextLevelArrow" type="Sprite2D" parent="Explanation/Label2"]
+position = Vector2(76.0001, 142)
+rotation = -3.14159
+scale = Vector2(0.164868, 0.164868)
+texture = ExtResource("10_e1xts")
+
+[node name="Label3" type="Label" parent="Explanation"]
+visible = false
+z_index = 300
+y_sort_enabled = true
+offset_left = 1496.0
+offset_top = 320.0
+offset_right = 1904.0
+offset_bottom = 701.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_07lpm")
+theme_override_font_sizes/font_size = 45
+text = "ATTENTION!
+
+Vous avez une limite de temps pour construire votre phrase!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="Explanation"]
+visible = false
+z_index = 300
+y_sort_enabled = true
+offset_left = 1320.0
+offset_top = 320.0
+offset_right = 1751.0
+offset_bottom = 637.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_07lpm")
+theme_override_font_sizes/font_size = 45
+text = "Chaque mot choisi affecte votre réputation différement"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tooltip" type="TextureRect" parent="Explanation/Label4"]
+z_index = 10
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 122.0
+offset_top = 325.0
+offset_right = 319.0
+offset_bottom = 448.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_pxqfi")
+script = ExtResource("11_g2rvb")
+
+[node name="ScoreCommoner" type="Label" parent="Explanation/Label4/Tooltip"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 60.0
+offset_right = 46.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("13_07lpm")
+theme_override_font_sizes/font_size = 40
+text = "-1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreClergy" type="Label" parent="Explanation/Label4/Tooltip"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 60.0
+offset_right = 115.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("13_07lpm")
+theme_override_font_sizes/font_size = 40
+text = "+5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreArmy" type="Label" parent="Explanation/Label4/Tooltip"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 60.0
+offset_right = 182.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("13_07lpm")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Army" type="Sprite2D" parent="Explanation/Label4/Tooltip"]
+position = Vector2(162, 38)
+scale = Vector2(0.0292968, 0.0292968)
+texture = ExtResource("14_qoy6p")
+
+[node name="Commoner" type="Sprite2D" parent="Explanation/Label4/Tooltip"]
+position = Vector2(40, 34.496)
+scale = Vector2(0.0253906, 0.0253906)
+texture = ExtResource("15_xqykm")
+
+[node name="Clergy" type="Sprite2D" parent="Explanation/Label4/Tooltip"]
+position = Vector2(98.748, 35.748)
+scale = Vector2(0.0285664, 0.0285664)
+texture = ExtResource("16_qj0ix")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 608.0
+offset_right = 1233.0
+offset_bottom = 706.0
+texture_normal = ExtResource("20_pmthu")
+texture_hover = ExtResource("21_y6hat")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 19.0
+offset_right = 164.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3bj3n")
+theme_override_font_sizes/font_size = 30
+text = "Continuer"
+
+[node name="PodiumZoom" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = 10
+y_sort_enabled = true
+position = Vector2(962.984, 806.8)
+scale = Vector2(0.4494, 0.4494)
+texture = ExtResource("14_gd6v7")
+
+[node name="WordButtons" type="HBoxContainer" parent="."]
+z_index = 10
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 641.5
+offset_top = 905.0
+offset_right = 3874.5
+offset_bottom = 1447.0
+scale = Vector2(0.2, 0.2)
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="Word1" type="TextureButton" parent="WordButtons"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("6_5i0m0")
+texture_pressed = ExtResource("7_jdefl")
+texture_hover = ExtResource("8_s4n3d")
+texture_disabled = ExtResource("9_x8wkf")
+
+[node name="Label" type="Label" parent="WordButtons/Word1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -11.5
+offset_right = 28.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_3bj3n")
+theme_override_font_sizes/font_size = 100
+text = "les poubelles"
+
+[node name="Word2" type="TextureButton" parent="WordButtons"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("6_5i0m0")
+texture_pressed = ExtResource("7_jdefl")
+texture_hover = ExtResource("8_s4n3d")
+texture_disabled = ExtResource("9_x8wkf")
+
+[node name="Label" type="Label" parent="WordButtons/Word2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -11.5
+offset_right = 28.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_3bj3n")
+theme_override_font_sizes/font_size = 100
+text = "la paix"
+
+[node name="Sentence2" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 10
+y_sort_enabled = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 776.0
+offset_top = 552.0
+offset_right = 1160.0
+offset_bottom = 920.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -55
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_3bj3n")
+theme_override_font_sizes/font_size = 60
+text = "Je promouvois _________ pour les pauvres."
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("19_wl3mm")
+
+[node name="Scores" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+z_index = 10
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 426.0
+offset_bottom = 190.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = 5
+
+[node name="CommonerProgressBar" type="ProgressBar" parent="Scores"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_4ppk8")
+max_value = 200.0
+value = 50.0
+show_percentage = false
+
+[node name="Commoner" type="Sprite2D" parent="Scores/CommonerProgressBar"]
+position = Vector2(22.248, 15.4189)
+scale = Vector2(0.021, 0.021)
+texture = ExtResource("15_xqykm")
+
+[node name="CleryProgressBar" type="ProgressBar" parent="Scores"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_i0cpa")
+max_value = 200.0
+value = 150.0
+show_percentage = false
+
+[node name="Clergy" type="Sprite2D" parent="Scores/CleryProgressBar"]
+position = Vector2(22, 17)
+scale = Vector2(0.021, 0.021)
+texture = ExtResource("16_qj0ix")
+
+[node name="ArmyProgressBar" type="ProgressBar" parent="Scores"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_5rqgq")
+max_value = 200.0
+step = 1.0
+value = 80.0
+show_percentage = false
+
+[node name="Army" type="Sprite2D" parent="Scores/ArmyProgressBar"]
+position = Vector2(22, 18)
+scale = Vector2(0.0214843, 0.0214843)
+texture = ExtResource("14_qoy6p")
+
+[node name="TotalProgressBar" type="ProgressBar" parent="Scores"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(408, 50)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_s0k00")
+max_value = 250.0
+value = 140.0
+show_percentage = false
+
+[node name="ScoreTotal" type="Label" parent="Scores/TotalProgressBar"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 137.0
+offset_bottom = 25.0
+text = "Réputation: 125"
+
+[node name="TimerProgress" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+z_index = 50
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 1618.0
+offset_top = 62.0
+offset_right = 1794.0
+offset_bottom = 281.0
+step = 0.1
+value = 100.0
+fill_mode = 5
+texture_under = ExtResource("20_ejlwg")
+texture_over = ExtResource("21_2r3t2")
+texture_progress = ExtResource("22_5f2g3")
+
+[node name="LabelTimer" type="Label" parent="TimerProgress"]
+z_index = 10
+y_sort_enabled = true
+layout_mode = 0
+offset_left = -7.00101
+offset_top = 31.0
+offset_right = 184.999
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_3bj3n")
+theme_override_font_sizes/font_size = 35
+text = "10
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1522.0
+offset_top = 862.0
+offset_right = 1838.0
+offset_bottom = 1009.0
+focus_mode = 0
+texture_normal = ExtResource("20_pmthu")
+texture_hover = ExtResource("21_y6hat")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Next"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 49.0
+offset_right = 302.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_07lpm")
+theme_override_font_sizes/font_size = 30
+text = "Continuer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
