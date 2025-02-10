@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci207ogm1m1wr"]
+[gd_scene load_steps=6 format=3 uid="uid://ci207ogm1m1wr"]
 
 [ext_resource type="FontFile" uid="uid://qjry3acvydgu" path="res://assets/Cinzel-VariableFont_wght.ttf" id="1_328nm"]
 [ext_resource type="Script" path="res://scripts/Gameover.cs" id="1_xiarq"]
@@ -8,6 +8,7 @@
 
 [node name="Gameover" type="Node2D"]
 script = ExtResource("1_xiarq")
+menu = "res://scenes/main_menu.tscn"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
